@@ -11,6 +11,10 @@
 
 <body>
     <div class="container">
+        <div class="input-group">
+            <input type="text" class="input" id="zip" name="zip" placeholder="Código Postal" autocomplete="off">
+            <input onclick="fetchWeather()" class="button--zip" value="Buscar" type="submit">
+        </div>
         <div class="main">
             <div class="temp">
                 <span id="temp">30</span>
@@ -62,8 +66,9 @@
                 <img src="./assets/img/weather/chancerain.png" width="30" height="30" alt="celcius">
             </div>
         </div>
-
     </div>
 </body>
+<script src="./assets/js/App.js"></script>
+<script src="./assets/js/config.js"></script>
 
 </html>
