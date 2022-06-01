@@ -59,6 +59,16 @@ body {
 
 .weather-info {
   display: flex;
+  padding-left: 10px;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-between;
+  background: rgba(168, 168, 168, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  -webkit-backdrop-filter: blur(7.2px);
+  border: 1px solid rgba(168, 168, 168, 0.31);
 }
 
 @media only screen and (max-width: 700px) {
