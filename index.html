@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather - Rahima Inc.</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/lib/alertify/css/alertify.min.css">
+    <link rel="stylesheet" href="./assets/lib/alertify/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container">
         <div class="input-group">
             <input type="text" class="input" id="zip" name="zip" placeholder="Código Postal" autocomplete="off">
-            <input onclick="fetchWeather()" class="button--zip" value="Buscar" type="submit">
+            <input onclick="fetchWeatherZip()" class="button--zip" value="Buscar" type="submit">
         </div>
         <div class="main">
             <div class="temp">
@@ -38,10 +40,6 @@
             <div class="item">
                 <p>Humedad: </p>
                 <p id="humidity">unknown</p>
-            </div>
-            <div class="item">
-                <p>Nivel de Mar: </p>
-                <p id="sea">unknown</p>
             </div>
         </div>
         <div class="forecast">
@@ -70,5 +68,6 @@
 </body>
 <script src="./assets/js/App.js"></script>
 <script src="config.js"></script>
+<script src="./assets/lib/alertify/js/alertify.min.js"></script>
 
 </html>
