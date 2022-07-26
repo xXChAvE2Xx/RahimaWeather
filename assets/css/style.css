@@ -5,29 +5,34 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 0.2fr);
-  grid-gap: 60px;
-  grid-auto-rows: minmax(100px, auto);
+  align-items: start;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 0.3fr);
+  grid-auto-rows: minmax(66px, auto);
   justify-content: center;
+  justify-items: center;
 }
-
+gi
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   background: rgba(168, 168, 168, 0.36);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.2px);
-  -webkit-backdrop-filter: blur(7.2px);
   border: 1px solid rgba(168, 168, 168, 0.31);
 }
 .info {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  justify-content: center;
+  background: rgba(168, 168, 168, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(7.2px);
+  -webkit-backdrop-filter: blur(7.2px);
+  border: 10px solid rgb(83 79 79 / 31%);
 }
 
 .desc {
