@@ -1,3 +1,6 @@
+//Loader
+const loaderWrapper = document.querySelector('.wrapper');
+
 document.addEventListener('DOMContentLoaded', function (event) {
   var options = {
     enableHighAccuracy: true,
@@ -13,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   function error(err) {
+    //Loader
+    loaderWrapper.classList.add('fade');
     alertify.error('ERROR(' + err.code + '): ' + err.message);
   }
 
@@ -20,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 const fetchWeatherZip = () => {
+  //FadeIn - Loader
+  loaderWrapper.classList.remove('fade');
   const zipcode = document.getElementById('zip').value;
   const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},mx&appid=${config.appikey}&lang=es&units=metric`;
   fetchData(url);
@@ -30,6 +37,7 @@ const fetchData = (url) => {
     .then((res) => {
       if (res.status != '200') {
         if (res.status == '404') {
+          loaderWrapper.classList.add('fade');
           alertify.error(`No se encontro información.`);
         }
         console.log(res.status);
@@ -59,6 +67,9 @@ const currentWeather = (temp, desc, city, urlIcon) => {
   const spanDesc = document.getElementById('desc');
   const imgIcon = document.getElementById('icono');
 
+  //Loader
+  loaderWrapper.classList.add('fade');
+
   spanTemp.innerText = temp;
   spanCity.innerText = city;
   spanDesc.innerText = desc;
@@ -73,4 +84,6 @@ const infoWeather = (feelsLike, pressure, humidity) => {
   pFeelsLike.innerText = feelsLike;
   pPressure.innerText = pressure + 'hPa';
   pHumidity.innerText = humidity + '%';
+  //Loader
+  loaderWrapper.classList.add('fade');
 };

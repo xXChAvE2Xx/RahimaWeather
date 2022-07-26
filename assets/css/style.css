@@ -126,6 +126,60 @@ body {
   outline: none;
 }
 
+/*Loader*/
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  place-items: center;
+  transition: opacity 0.25s, visibility 1s;
+}
+
+.spinner {
+  position: relative;
+  width: 22.4px;
+  height: 22.4px;
+}
+
+.spinner::before,
+.spinner::after {
+  --radius: 250;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: spinner-w7nm60 2s infinite linear;
+  background: #303030;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  --radius: -250;
+  background: #afafb4;
+}
+
+@keyframes spinner-w7nm60 {
+  0% {
+    transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+  }
+
+  50% {
+    transform: scale(0.5) rotate(1440deg) translateY(0);
+  }
+
+  100% {
+    transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+  }
+}
+
+.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+/*End-Loader*/
+
 @media only screen and (max-width: 700px) {
   .container {
     grid-template-columns: repeat(1, 1fr);
